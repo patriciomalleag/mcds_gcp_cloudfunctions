@@ -18,7 +18,9 @@ Diseñada con una arquitectura **orientada a objetos** y **modular**:
 ### Caso general
 El `data` del mensaje debe contener (en Base64) un string con el formato:
 
+```
 <vm_name>:<zone>:<action>
+```
 
 Ejemplo:
 patriciomallea-vm1:europe-southwest1-b:start
