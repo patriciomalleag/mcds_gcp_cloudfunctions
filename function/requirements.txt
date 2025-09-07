@@ -1,0 +1,3 @@
+functions-framework==3.*
+google-cloud-compute==1.26.0
+google-auth
