@@ -1,4 +1,4 @@
-# Control de VMs con Cloud Functions (OOP, Python 3.11)
+# Control de VMs con Cloud Functions (ahora OOP)
 
 Esta Cloud Function (Gen2) procesa mensajes de **Pub/Sub** para gestionar instancias de Compute Engine.  
 Permite **iniciar**, **detener**, **crear** y **borrar** VMs.  
@@ -23,16 +23,19 @@ El `data` del mensaje debe contener (en Base64) un string con el formato:
 ```
 
 Ejemplo:
+```
 patriciomallea-vm1:europe-southwest1-b:start
-
+```
 ### Caso especial: `create` con parámetros
 Se pueden pasar parámetros adicionales en **attributes** del mensaje Pub/Sub:
 
 Ejemplo de publicación con `gcloud`:
 
+```
 gcloud pubsub topics publish patriciomallea-control-vm \
   --message="patriciomallea-vm2:europe-southwest1-b:create" \
   --attribute="machine_type=e2-medium,image_family=debian-12,network=global/networks/default"
+```
 
 ### Parámetros soportados en `attributes` para `create`
 - `machine_type` (ej: `e2-small`, `e2-medium`, o `zones/.../machineTypes/...`)
